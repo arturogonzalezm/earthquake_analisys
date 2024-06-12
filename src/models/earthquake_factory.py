@@ -1,5 +1,4 @@
 from datetime import datetime
-
 from src.models.earthquake import Earthquake
 
 
@@ -9,8 +8,8 @@ class EarthquakeFactory:
         properties = data["properties"]
         geometry = data["geometry"]
         coordinates = geometry["coordinates"]
-        longitude = coordinates[0]
-        latitude = coordinates[1]
+        longitude = float(coordinates[0])
+        latitude = float(coordinates[1])
         timestamp_ms = properties["time"]
         timestamp = timestamp_ms / 1000
 
